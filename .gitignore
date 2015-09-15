@@ -1,0 +1,13 @@
+
+#MAC OS
+.DS_Store
+
+#Intelij
+*.iml
+*.idea
+
+#gradle
+build
+.gradle
+gradle
+
