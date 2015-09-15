@@ -1,0 +1,22 @@
+group 'dean.cards'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+import java.awt.Desktop
+
+gradle.taskGraph.afterTask { task, taskState ->
+    if (task instanceof Test) {
+        if (Desktop.isDesktopSupported()) {
+            Desktop.desktop.browse( new File(task.testReportDirName, 'index.html').toURI() )
+        }
+    }
+}
