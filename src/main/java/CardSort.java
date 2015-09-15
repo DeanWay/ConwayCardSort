@@ -1,6 +1,9 @@
 
 import java.util.Stack;
 
+/*
+ * Author: Brandon Way
+ */
 public class CardSort
 {
     private Stack<Integer> leftDeck;

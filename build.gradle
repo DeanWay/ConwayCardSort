@@ -10,3 +10,9 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
+
+
+//normally this would be terrible but in this case we want to
+//generate a new build each time 'gradle test' is run so that
+//tests are performed again.
+compileJava.dependsOn clean
