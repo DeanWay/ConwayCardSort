@@ -96,13 +96,11 @@ public class CardSort
             return;
         }
         while (!(this.middleDeck.empty() && this.rightDeck.empty())) {
-            switch (compare(this.middleDeck, this.rightDeck)) {
-                case -1: this.leftDeck.push(this.rightDeck.pop());
-                    break;
-                case 0: this.leftDeck.push(this.rightDeck.pop());
-                    break;
-                case 1: this.leftDeck.push(this.middleDeck.pop());
-                    break;
+            if (compare(this.middleDeck, this.rightDeck) <= 0) {
+                this.leftDeck.push(this.rightDeck.pop());
+            }
+            else {
+                this.leftDeck.push(this.middleDeck.pop());
             }
         }
         mergeSortedSublists();
